@@ -132,7 +132,7 @@ extension View {
     /// Finds a `UIScrollView` from a `SwiftUI.ScrollView`, or `SwiftUI.ScrollView` child.
     @available(*, deprecated, message: "The Introspect module is deprecated and will be obsoleted later this year. Please switch over to the new and improved SwiftUIIntrospect module. More info: https://github.com/siteline/swiftui-introspect#readme")
     public func introspectScrollView(customize: @escaping (UIScrollView) -> ()) -> some View {
-        if #available(iOS 14, tvOS 14, *) {
+        if #available(tvOS 14, *) {
             return introspect(selector: TargetViewSelector.siblingOrAncestorOrSiblingContainingOrAncestorChild, customize: customize)
         } else {
             return introspect(selector: TargetViewSelector.siblingContainingOrAncestor, customize: customize)
@@ -209,7 +209,6 @@ extension View {
     
     /// Finds a `UIColorWell` from a `SwiftUI.ColorPicker`
     #if os(iOS)
-    @available(iOS 14, *)
     @available(tvOS, unavailable)
     @available(*, deprecated, message: "The Introspect module is deprecated and will be obsoleted later this year. Please switch over to the new and improved SwiftUIIntrospect module. More info: https://github.com/siteline/swiftui-introspect#readme")
     public func introspectColorWell(customize: @escaping (UIColorWell) -> ()) -> some View {
@@ -326,7 +325,6 @@ import MapKit
 @available(iOS 15.0, *)
 extension View {
     /// Finds an `MKMapView` from a `SwiftUI.Map`
-    @available(iOS 14, tvOS 14, macOS 11, *)
     @available(*, deprecated, message: "The Introspect module is deprecated and will be obsoleted later this year. Please switch over to the new and improved SwiftUIIntrospect module. More info: https://github.com/siteline/swiftui-introspect#readme")
     public func introspectMapView(customize: @escaping (MKMapView) -> ()) -> some View {
         introspect(selector: TargetViewSelector.siblingContaining, customize: customize)
