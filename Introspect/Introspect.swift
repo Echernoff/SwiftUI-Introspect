@@ -15,6 +15,7 @@ public typealias PlatformViewController = UIViewController
 #endif
 
 /// Utility methods to inspect the UIKit view hierarchy.
+@available(iOS 15.0, *)
 public enum Introspect {
     
     /// Finds a subview of the specified type.
@@ -283,6 +284,7 @@ public enum Introspect {
     }
 }
 
+@available(iOS 15.0, *)
 public enum TargetViewSelector {
     public static func siblingContaining<TargetView: PlatformView>(from entry: PlatformView) -> TargetView? {
         guard let viewHost = Introspect.findViewHost(from: entry) else {
@@ -346,6 +348,7 @@ public enum TargetViewSelector {
 
 /// Allows to safely access an array element by index
 /// Usage: array[safe: 2]
+@available(iOS 15.0, *)
 private extension Array {
     subscript(safe index: Int) -> Element? {
         guard index >= 0, index < endIndex else {
