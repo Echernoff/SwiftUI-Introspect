@@ -142,7 +142,7 @@ extension View {
     /// Finds the horizontal `UIScrollView` from a `SwiftUI.TabBarView` with tab style `SwiftUI.PageTabViewStyle`.
     ///
     /// Customize is called with a `UICollectionView` wrapper, and the horizontal `UIScrollView`.
-    @available(iOS 14, tvOS 14, *)
+    @available(tvOS 14, *)
     @available(*, deprecated, message: "The Introspect module is deprecated and will be obsoleted later this year. Please switch over to the new and improved SwiftUIIntrospect module. More info: https://github.com/siteline/swiftui-introspect#readme")
     public func introspectPagedTabView(customize: @escaping (UICollectionView, UIScrollView) -> ()) -> some View {
         if #available(iOS 16, *) {
